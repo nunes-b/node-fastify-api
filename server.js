@@ -49,9 +49,10 @@ server.delete("/videos/:id", async (request, reply) => {
   return reply.status(204).send();
 });
 
+const hoste = "0.0.0.0";
 server.listen(
   {
-    host: "0.0.0.0",
+    host: hoste,
     port: portEnds,
   },
   (err) => {
