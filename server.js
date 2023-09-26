@@ -53,10 +53,16 @@ server.delete("/videos/:id", async (request, reply) => {
   return reply.status(204).send();
 });
 
-server.listen(portEnds ?? 3999, (err) => {
-  if (err) {
-    console.error("Error starting the server:", err);
-    process.exit(1);
+server.listen(
+  {
+    host: "0.0.0.0",
+    port: portEnds,
+  },
+  (err) => {
+    if (err) {
+      console.error("Error starting the server:", err);
+      process.exit(1);
+    }
+    console.log(`Server is running on port http://localhost:${portEnds}/`);
   }
-  console.log(`Server is running on port http://localhost:${portEnds}/`);
-});
+);
