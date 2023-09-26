@@ -1,7 +1,6 @@
 const { fastify } = require("fastify");
 require("dotenv").config();
 const DatabasePostgres = require("./database-postgres");
-// const DatabaseMemory = require("./database-memory.js");
 
 const portEnds = process.env.PORT;
 const server = fastify();
@@ -12,9 +11,6 @@ server.get("/", () => {
 
 //db com PG
 const database = new DatabasePostgres();
-
-//db
-// const database = new DatabaseMemory();
 
 // Rotas -->
 server.post("/videos", async (request, reply) => {
