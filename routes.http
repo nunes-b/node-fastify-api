@@ -2,14 +2,25 @@ POST  http://localhost:3399/videos
 Content-Type: application/json
 
 {
-    "title":"Videooe",
-    "description":"description",
-    "duration":"100"
+    "title":"Video Nodejs",
+    "description":"Descrição",
+    "duration":200
 }
-
 
 ###
 
 GET  http://localhost:3399/videos
 
 
+###
+PUT http://localhost:3399/videos/d50487d9-6085-4fd4-a4e0-5be4cbac68cf
+Content-Type: application/json
+
+{
+    "title":"Video 2",
+    "description":"put 1",
+    "duration":"1"
+}
+
+###
+DELETE  http://localhost:3399/videos/d50487d9-6085-4fd4-a4e0-5be4cbac68cf
